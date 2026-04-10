@@ -18,6 +18,10 @@ console.log(publicDirectoryPath);
 // Definir el Path para el contenido estatico
 app.use(express.static(publicDirectoryPath));
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(publicDirectoryPath, 'home.html'));
+});
+
 // Definicion de metodos y funcionalidades para el request.http
 const leerData = () => {
     try
