@@ -1,0 +1,32 @@
+{
+    "usuarios": [
+        {
+            "id": 1,
+            "nombre": "Juan Pérez",
+            "email": "juan@gmail.com",
+            "edad": 25,
+            "activo": false
+        },
+        {
+            "id": 2,
+            "nombre": "Eric Flom",
+            "email": "fl0m@gmail.com",
+            "edad": 32,
+            "activo": true
+        },
+        {
+            "id": 4,
+            "nombre": "Erick Castillo",
+            "email": "erick@gmail.com",
+            "edad": 21,
+            "activo": false
+        },
+        {
+            "id": 5,
+            "nombre": "Alex Kim",
+            "email": "akim@gmail.com",
+            "edad": 16,
+            "activo": true
+        }
+    ]
+}

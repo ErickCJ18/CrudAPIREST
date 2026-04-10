@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD :: API REST</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+</head>
+<body>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">CRUD de Usuarios</h1>
+
+      <div class="box">
+        <div class="field">
+          <label class="label">Nombre</label>
+          <div class="control">
+            <input id="nombre" class="input" type="text" placeholder="Nombre">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input id="email" class="input" type="email" placeholder="Email">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Edad</label>
+          <div class="control">
+            <input id="edad" class="input" type="email" placeholder="Edad">
+          </div>
+        </div>
+
+        <button id="addit" class="button is-primary">Agregar</button>
+        <button id="cancelit" class="button is-danger ml-2 is-hidden" disabled>Cancelar</button>
+      </div>
+
+      <div class="field">
+        <label class="label">Buscar</label>
+        <div class="control">
+          <input id="busqueda" class="input" type="text" placeholder="Buscar..." onkeyup="filtrarUsuarios()">
+        </div>
+      </div>
+
+      <table class="table is-fullwidth is-striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Edad</th>
+            <th>Acciones</th>
+            <th>Activo</th>
+          </tr>
+        </thead>
+        <tbody id="tabla"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="modal" id="modal">
+    <div class="modal-background" onclick="cerrarModal()"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Editar Usuario</p>
+        <button class="delete" onclick="cerrarModal()"></button>
+      </header>
+
+      <section class="modal-card-body">
+        <input type="hidden" id="editIndex">
+
+        <div class="field">
+          <label class="label">Nombre</label>
+          <input id="editNombre" class="input" type="text">
+        </div>
+
+        <div class="field">
+          <label class="label">Correo</label>
+          <input id="editCorreo" class="input" type="email">
+        </div>
+
+        <div class="field">
+          <label class="label">Edad</label>
+          <input id="editEdad" class="input" type="text">
+        </div>
+        
+      <div class="field">
+        <label class="checkbox">
+          <input id="activo" type="checkbox">
+          Activo
+        </label>
+      </div>
+        
+      </section>
+
+      <footer class="modal-card-foot">
+        <button class="button is-success" onclick="guardarEdit()">Guardar</button>
+        <button class="button" onclick="cerrarModal()">Cancelar</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
